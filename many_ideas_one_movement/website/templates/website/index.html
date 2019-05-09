@@ -11,6 +11,7 @@
         overflow-y: hidden;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
+        border-radius: 20px;
     }
 
     .scrolling-wrapper::-webkit-scrollbar {
@@ -35,10 +36,16 @@
     .my-card {
         min-height: 300px;
         width: calc(40% - 20px);
-        border: 2px solid black;
+        max-width: 500px;
+        min-width: 300px;
         border-radius: 20px;
         display: inline-block;
         background-size: cover;
+    }
+
+    .my-card:hover{
+        cursor: pointer;
+        color: blue;
     }
 
     h4.card-text {
@@ -58,11 +65,18 @@
         box-sizing: unset;
     }
 </style>
+<script>
+    $(document).ready(function(){
+        $('#apple').click(function(){
+            window.location.href = 'apple';
+        })
+    })
+</script>
 <h1>Many ideas | one Movement</h1>
 <h3>Neue Startups</h3>
 <a href="#last">last</a>
 <div class="scrolling-wrapper">
-    <div class="my-card"
+    <div class="my-card" id="apple"
         style="background-image: url('https://images.newscientist.com/wp-content/uploads/2019/04/08111018/screenshot-2019-04-08-10.24.34.jpg')">
         <h4 class="card-text">Apple</h4>
     </div>
@@ -79,5 +93,4 @@
         <h4 class="card-text">Apple</h4>
     </div>
 </div>
-<p>ein anderer Content</p>
 {% endblock %}

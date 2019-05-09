@@ -25,7 +25,7 @@ SECRET_KEY = 'mqn6s%r_7k1tmf5xk%1_-@lg=s!)-un^f_$!-jj$19auhr+lg-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['manyideasonemovement.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition

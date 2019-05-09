@@ -17,9 +17,8 @@
         crossorigin="anonymous"></script>
 
     <style>
-
-        *{
-            -webkit-transition: background 0.5s ease !important; 
+        * {
+            -webkit-transition: color 0.1s ease !important;
         }
 
         body {
@@ -40,10 +39,6 @@
             height: 200px;
         }
 
-        .navbar-collapse {
-            padding-left: calc(50% - 130px);
-        }
-
         a.nav-link {
             color: white !important;
             margin: 5px;
@@ -54,13 +49,15 @@
         }
 
         .sticky-nav {
-            position: fixed;
             top: 0;
         }
 
         .content {
-            padding-top: calc(200px + 2.5%) !important;
             padding: 2.5%;
+        }
+
+        .login {
+            height: 30px;
         }
     </style>
     <script>
@@ -73,12 +70,19 @@
                 nav_height = nav_height.slice(0, nav_height.length - 1);
                 nav_height = nav_height.slice(0, nav_height.length - 1);
                 nav_height = parseInt(nav_height);
-                console.log(nav_height);
-                if (scrollTop <= 120) {
-                    $('nav').css('height', 'calc(200px - ' + scrollTop + 'px)');
-                }else if(scrollTop >= 120 && nav_height > 80){
-                    $('nav').css('height', '80px');
+                console.log(scrollTop);
+                if (scrollTop >= 20) {
+                    $('.content').css('padding-top', 'calc(200px + 2.5%) !important');
+                    $('nav').css('position', 'fixed');
+                } else if (scrollTop <= 20) {
+                    $('.content').css('padding-top', '2.5% !important');
+                    $('nav').css('position', 'unset');
                 }
+                if (scrollTop <= 120 && scrollTop >= 20) {
+                    $('nav').css('height', 'calc(200px - ' + (scrollTop - 20) + 'px)');
+                } else if (scrollTop >= 120 && nav_height > 80) {
+                    $('nav').css('height', '80px');
+                };
             })
             $('.navbar-toggler').click(function () {
                 nav_shown = !nav_shown;
@@ -97,6 +101,10 @@
 </head>
 
 <body>
+    <div class="login">
+        <a href="login">login</a>
+        <a href="registrieren">registrieren</a>
+    </div>
     <nav class="navbar sticky-nav navbar-expand-lg navbar-dark">
         <a href="#" class="navbar-brand">
             <h2 class="title">Many ideas one Movement</h2>
@@ -114,12 +122,22 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        Home
+                        Startups
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        Home
+                        Investoren
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Kontakt
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Über uns
                     </a>
                 </li>
             </ul>
