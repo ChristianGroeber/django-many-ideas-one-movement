@@ -2,10 +2,10 @@
 
 {% block content %}
 <style>
-    html{
+    html {
         scroll-behavior: smooth;
     }
-    
+
     .scrolling-wrapper {
         overflow-x: scroll;
         overflow-y: hidden;
@@ -14,25 +14,70 @@
     }
 
     .scrolling-wrapper::-webkit-scrollbar {
-        display: none;
+        width: 2px;
+        height: 10px;
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar-thumb {
+        background: rgb(241, 241, 241);
+        border-radius: 20px;
+        border: 0.5px solid black;
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 
     .my-card {
-        min-height: 200px;;
-        min-width: calc(30% - 20px);
+        min-height: 300px;
+        width: calc(40% - 20px);
         border: 2px solid black;
+        border-radius: 20px;
         display: inline-block;
+        background-size: cover;
+    }
+
+    h4.card-text {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    p.wrapping {
+        box-sizing: unset;
     }
 </style>
 <h1>Many ideas | one Movement</h1>
 <h3>Neue Startups</h3>
 <a href="#last">last</a>
 <div class="scrolling-wrapper">
-    <div class="my-card">Card</div>
-    <div class="my-card">Card</div>
-    <div class="my-card">Card</div>
-    <div class="my-card">Card</div>
-    <div class="my-card" id="last">Card</div>
+    <div class="my-card"
+        style="background-image: url('https://images.newscientist.com/wp-content/uploads/2019/04/08111018/screenshot-2019-04-08-10.24.34.jpg')">
+        <h4 class="card-text">Apple</h4>
+    </div>
+    <div class="my-card"
+        style="background-image: url('https://images.newscientist.com/wp-content/uploads/2019/04/08111018/screenshot-2019-04-08-10.24.34.jpg')">
+        <h4 class="card-text">Apple</h4>
+    </div>
+    <div class="my-card"
+        style="background-image: url('https://images.newscientist.com/wp-content/uploads/2019/04/08111018/screenshot-2019-04-08-10.24.34.jpg')">
+        <h4 class="card-text">Apple</h4>
+    </div>
+    <div class="my-card"
+        style="background-image: url('https://images.newscientist.com/wp-content/uploads/2019/04/08111018/screenshot-2019-04-08-10.24.34.jpg')">
+        <h4 class="card-text">Apple</h4>
+    </div>
 </div>
 <p>ein anderer Content</p>
 {% endblock %}
