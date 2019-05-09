@@ -1,14 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello there</h1>
-    some content
-    <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet.
-    </p>
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+    
+    .scrolling-wrapper {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .my-card {
+        min-height: 200px;;
+        min-width: calc(30% - 20px);
+        border: 2px solid black;
+        display: inline-block;
+    }
+</style>
+<h1>Many ideas | one Movement</h1>
+<h3>Neue Startups</h3>
+<a href="#last">last</a>
+<div class="scrolling-wrapper">
+    <div class="my-card">Card</div>
+    <div class="my-card">Card</div>
+    <div class="my-card">Card</div>
+    <div class="my-card">Card</div>
+    <div class="my-card" id="last">Card</div>
+</div>
+<p>ein anderer Content</p>
 {% endblock %}
