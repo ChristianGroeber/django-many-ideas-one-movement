@@ -49,12 +49,19 @@
             .navbar.navbar-collapse {
                 display: none;
                 background-color: white;
-                animation-duration: 5s;
+                width: 60%;
             }
 
-            @keyframes sliding-nav{
-                from {padding-left: 100%;}
-                to{padding-left: 0%;}
+            li.nav-item{
+                display: block;
+                margin: 5px;
+            }
+
+            a.nav-link{
+                display: block !important;
+                background-color: rgba(0,0,0,0.3);
+                padding: 10px;
+                width: 50%;
             }
         }
 
